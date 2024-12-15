@@ -4,18 +4,18 @@ from flask import *
 
 app = Flask(__name__)
 
-
+# prompts user to upload file
 @app.route('/')
 def main():
     return render_template("index.html")
 
-
+# runs when file is successfully uploaded
 @app.route('/success', methods=['POST'])
 def success():
     if request.method == 'POST':
         f = request.files['file']
         f.save(f.filename)
-        return render_template("Acknowledgement.html", name=f.filename)
+        return render_template("acknowledgement.html", name=f.filename)
 
 
 if __name__ == '__main__':
