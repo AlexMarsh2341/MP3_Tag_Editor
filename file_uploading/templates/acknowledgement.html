@@ -8,4 +8,22 @@
       <p>File uploaded successfully</p>
       <p>File Name: {{name}}</p>
 </body>
+
+<body>
+    <p>Enter the artist:</p>
+        <label>
+            <input type="text" name="artist">
+        </label>
+    <p>Enter the album name:</p>
+        <label>
+            <input type="text" name="album">
+        </label>
+    <p>Enter the song title:</p>
+        <label>
+            <input type="text" name="title">
+        </label>
+    <form action = "/submit" method = "post" enctype="multipart/form-data">
+        <input type = "submit" value="Edit the file">
+    </form>
+</body>
 </html>
