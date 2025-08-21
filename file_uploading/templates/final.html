@@ -6,8 +6,6 @@
 </head>
 <body>
     <p>Download your tagged file</p>
-    <a href='file' download>
-        <input type="button" value ='Download'>
-    </a>
+    <a href="{{ url_for('download', filename=name) }}">Download here</a>
 </body>
 </html>

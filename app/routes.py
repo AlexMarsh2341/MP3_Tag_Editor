@@ -1,16 +1,16 @@
-from app import app
+from flask import Flask, request, redirect, render_template
 
-# home route, empty url
+app = Flask(__name__)
+
 @app.route('/')
-def home():
-    return "That boy working!"
+def index():
+    return render_template('index.html')
 
-#converter route
-@app.route("/convert")
-def converter():
-    return "Will convert YouTube video to MP3 file."
-
-#file editor route
-@app.route("/edit")
-def editer():
-    return "Will edit MP3 file tags."
+@app.route('/edit', methods=['POST'])
+def edit():
+    uploaded_file = request.files['file']
+    if uploaded_file.filename != '':
+        file_path = f"./uploads/{uploaded_file.filename}"
+        uploaded_file.save(file_path)
+        # Now you can modify the file at file_path
+    return redirect('/')

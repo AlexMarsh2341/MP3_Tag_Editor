@@ -10,20 +10,21 @@
 </body>
 
 <body>
-    <p>Enter the artist:</p>
+    <form action = "/submit" method = "post" enctype="multipart/form-data">
+        <input type="hidden" name="file_path" value="{{ file_path }}">
+        <p>Enter the artist:</p>
         <label>
-            <input type="text" name="artist">
+            <input type="text" name="artist" required>
         </label>
     <p>Enter the album name:</p>
         <label>
-            <input type="text" name="album">
+            <input type="text" name="album" required>
         </label>
     <p>Enter the song title:</p>
         <label>
-            <input type="text" name="title">
+            <input type="text" name="title" required>
         </label>
-    <form action = "/submit" method = "post" enctype="multipart/form-data">
-        <input type = "submit" value="Edit the file">
+        <button type="submit">Submit</button>
     </form>
 </body>
 </html>
